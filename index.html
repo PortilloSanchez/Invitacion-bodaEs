@@ -1587,15 +1587,15 @@
                     <label class="radio-label-inline">
                       <input type="radio" class="radio-input-inline" name="trae_acompanante" value="No">
                       No, iré solo(a)
-                    </label>-->
+                    </label>
                   </div>
-                </div>
+                </div> -
 
                 <div id="nombreAcompananteDiv" style="display: none; margin-top: 15px;">
                   <label class="etiqueta">Nombre de los acompañante (separados por comas)</label>
                   <input type="text" class="input-texto" id="nombre_acompanante" name="nombre_acompanante" placeholder="Ej: Efrain Portillo, Jazmin Sanchez">
                 </div>
-              </div>
+              </div> -->
 
               <button type="submit" class="boton-enviar" id="boton-enviar">
                 <i class="fas fa-paper-plane"></i> Enviar Confirmación
@@ -1721,45 +1721,45 @@
       const botonEnviar = document.getElementById('boton-enviar');
       
       // Mostrar/ocultar sección de acompañante
-      const asistenciaRadios = document.querySelectorAll('input[name="asistencia"]');
-      asistenciaRadios.forEach(r => {
-        r.addEventListener('change', () => {
-          if (r.value === 'Si' && r.checked) {
-            acompananteSection.style.display = 'block';
-          } else if (r.value === 'No' && r.checked) {
-            acompananteSection.style.display = 'none';
+  //  const asistenciaRadios = document.querySelectorAll('input[name="asistencia"]');
+   //   asistenciaRadios.forEach(r => {
+   //     r.addEventListener('change', () => {
+   //       if (r.value === 'Si' && r.checked) {
+//            acompananteSection.style.display = 'block';
+   //       } else if (r.value === 'No' && r.checked) {
+     //       acompananteSection.style.display = 'none';
             // Resetear campos de acompañante
-            document.querySelectorAll('input[name="trae_acompanante"]').forEach(a => a.checked = false);
-            acompNameDiv.style.display = 'none';
-            if (acompNameInput) acompNameInput.value = '';
-          }
-        });
-      });
+   //         document.querySelectorAll('input[name="trae_acompanante"]').forEach(a => a.checked = false);
+  //          acompNameDiv.style.display = 'none';
+   //         if (acompNameInput) acompNameInput.value = '';
+  //        }
+ //       });
+   //   });
       
       // Mostrar/ocultar campo para nombre del acompañante
-      const acompRadios = document.querySelectorAll('input[name="trae_acompanante"]');
-      acompRadios.forEach(r => {
-        r.addEventListener('change', () => {
-          if (r.value === 'Si' && r.checked) {
-            acompNameDiv.style.display = 'block';
-          } else if (r.value === 'No' && r.checked) {
-            acompNameDiv.style.display = 'none';
-            if (acompNameInput) acompNameInput.value = '';
-          }
-        });
-      });
+ //     const acompRadios = document.querySelectorAll('input[name="trae_acompanante"]');
+ //     acompRadios.forEach(r => {
+ //       r.addEventListener('change', () => {
+ //         if (r.value === 'Si' && r.checked) {
+ //           acompNameDiv.style.display = 'block';
+//          } else if (r.value === 'No' && r.checked) {
+//            acompNameDiv.style.display = 'none';
+//            if (acompNameInput) acompNameInput.value = '';
+//          }
+//        });
+//      });
       
       // Envío del formulario
       form.addEventListener('submit', function(e) {
         e.preventDefault();
         
         // Validar que si seleccionó "Sí" a acompañante, complete el nombre
-        const traeAcompanante = document.querySelector('input[name="trae_acompanante"]:checked');
-        if (traeAcompanante && traeAcompanante.value === 'Si' && (!acompNameInput.value || !acompNameInput.value.trim())) {
-          alert('Por favor ingresa el nombre de tu acompañante');
-          acompNameInput.focus();
-          return;
-        }
+    //    const traeAcompanante = document.querySelector('input[name="trae_acompanante"]:checked');
+     //   if (traeAcompanante && traeAcompanante.value === 'Si' && (!acompNameInput.value || !acompNameInput.value.trim())) {
+     //     alert('Por favor ingresa el nombre de tu acompañante');
+     //     acompNameInput.focus();
+    //      return;
+   //     }
         
         // Cambiar estado del botón
         const originalText = botonEnviar.innerHTML;
@@ -1808,5 +1808,6 @@
 </body>
 
 </html>
+
 
 
